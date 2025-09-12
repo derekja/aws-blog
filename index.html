@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Explorations Blog - University Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header">
+            <h1 class="site-title">AWS Explorations Blog</h1>
+            <p class="site-subtitle">University Research and Innovation on Amazon Web Services</p>
+        </header>
+
+        <main class="blog-content">
+            <article class="blog-post">
+                <div class="post-metadata">
+                    <div class="category-tags">
+                        <a href="#" class="tag">AWS</a>
+                        <a href="#" class="tag">Development Teams</a>
+                        <a href="#" class="tag">Claude Code</a>
+                        <a href="#" class="tag">Infrastructure as Code</a>
+                    </div>
+                </div>
+
+                <h1 class="post-title">
+                    Running development teams at UVic and with the Pacific Coastal Computing Association
+                </h1>
+
+                <div class="post-info">
+                    <div class="authors">
+                        <span class="author-label">By</span>
+                        <span class="author-names">Derek Jacoby</span>
+                    </div>
+                    <div class="publish-date">
+                        <time datetime="2025-09-08">September 8, 2025</time>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="lead-paragraph">
+                        Summertime is internship season at UVic! Our students go off to various companies, and they also work on joint research projects. One of the projects that we are working on is with a non-profit called the <a href="https://coastalcomputing.ca/" target="_blank">Pacific Coastal Computing Association</a> who is developing an application called <a href="https://knowledgegraph.ca/" target="_blank">KnowledgeGraph</a> to use AI to assist in educational efforts, both at UVic and other institutions, and in consultation with community efforts.
+                    </p>
+
+                    <p>
+                        You can hear our development team describe one current project!
+                    </p>
+
+                    <div class="video-container">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/1m3-Q9f6VT0" title="Development Team Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+
+                    <p>
+                        This work is also highly leveraging AWS infrastructure. Nathan Inbar is a UVic student that spent most of his summer wrangling various AWS services - EC2, S3, Application Gateway, Bedrock, ECR/ECS, etc - to create a cloud native version of KnowledgeGraph.
+                    </p>
+
+                    <p>
+                        The team is using Claude Code as our AI tool of choice, and it helps to have some structure around the use of the tool to keep consistency. Even the markdown files give us a good idea of self-documenting features of using the AI tools, but the real benefit comes from allowing them to tune our working environment. We use the AI tools to plan development features, to start the development process, to do code reviews and test case development. One thing we do NOT do is vibe code. Every developer on the team is responsible for fully understanding and approving every line of code that goes into the product. How much of the code is automatically generated varies both by team member and application area.
+                    </p>
+
+                    <p>
+                        Although we haven't made this shift yet, we are evaluating a tool that has just come out from Github called <a href="https://github.com/github/spec-kit" target="_blank">spec-kit</a>. As we move towards a new phase of the project in the fall we are investigating spec-kit as an AI coding model to move towards.
+                    </p>
+
+                    <p>
+                        The other work presently going on is to tie the AWS services into a Terraform based setup. This is one of the areas that is always a barrier to new people on the AWS platform - understanding the wealth of services and using the web console to set them up is just a very complex learning process. The use of Terraform allows us to use an Infrastructure as Code (IaC) approach to deployment that is really important in creating repeatable installations on AWS.
+                    </p>
+
+                    <p>
+                        In one exciting development, one of our team members has been asked to speak at a major Git conference at the end of the month! Congratulations Piyush in this fun opportunity!
+                    </p>
+
+                    <p>
+                        <a href="https://git-merge.com/#piyush-acharya" target="_blank">https://git-merge.com/#piyush-acharya</a>
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-metadata">
+                    <div class="category-tags">
+                        <a href="#" class="tag">AWS</a>
+                        <a href="#" class="tag">SIGGRAPH</a>
+                        <a href="#" class="tag">AI Applications</a>
+                        <a href="#" class="tag">Claude Code</a>
+                    </div>
+                </div>
+
+                <h1 class="post-title">
+                    UVic at the ACM SIGGRAPH Appy Hour
+                </h1>
+
+                <div class="post-info">
+                    <div class="authors">
+                        <span class="author-label">By</span>
+                        <span class="author-names">Derek Jacoby</span>
+                    </div>
+                    <div class="publish-date">
+                        <time datetime="2025-08-14">August 14, 2025</time>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="lead-paragraph">
+                        Mid-August of 2025, a group of UVic students participated in SIGGRAPH's <a href="https://s2025.siggraph.org/event/appy-hour/" target="_blank">Appy Hour</a>. They were demonstrating several applications that we built using Amazon Web Services to underlie the AI applications that we chose to engage audiences with. These were examples of the type of application that can support museum installations.
+                    </p>
+
+                    <p>
+                        In the first example, Annie McClure built a web page and a series of speech interactive applications. She was experimenting with AI authoring tools and her first task was to figure out how to get Claude Code to work with the Anthropic models on AWS Bedrock! Fortunately, there were some guides to lead her way (<a href="https://builder.aws.com/content/2tXkZKrZzlrlu0KfH8gST5Dkppq/claude-code-on-amazon-bedrock-quick-setup-guide" target="_blank">Claude Code on Amazon Bedrock Quick Setup Guide</a>).
+                    </p>
+
+                    <div class="image-container">
+                        <img src="claudecode.png" alt="Claude Code interface showing AWS Bedrock integration" />
+                    </div>
+
+                    <p>
+                        Her next task was to have Claude help her develop some web pages. A theme of the exhibit was diatoms - microscopic ocean creatures that serve an important role in ecosystem signalling. There were also two other example applications that she worked on.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="diatoms.png" alt="Diatom-themed web application interface" />
+                    </div>
+
+                    <p>
+                        These web pages were backed up by a voice interactive system that operates over the phone lines. Please call it yourself! Dr. Marino Waters (an AI) can be reached at <strong>778-817-1483</strong>.
+                    </p>
+
+                    <p>
+                        Annie worked out illustrative prompts for that system, which is based on the <a href="https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/" target="_blank">AWS Nova Sonic speech to speech model</a> and allows the system to provide snappy responses that mimic human-to-human conversations. These were tied in to the telephone network through a Voice over IP service (voip.ms) and the AWS Connect service.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="novasonic.png" alt="AWS Nova Sonic speech-to-speech model demonstration" />
+                    </div>
+
+                    <p>
+                        Another student, Nathan Inbar, did work to get a demonstration of the diatom application to run on the <a href="https://pro.sony/en_CA/products/spatial-reality-displays/3d-professional-images" target="_blank">Sony SRD monitor</a> which Sony loaned to us to try developing some applications on.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="sonydisplay.png" alt="Sony Spatial Reality Display showing diatom application" />
+                    </div>
+
+                    <p>
+                        Nathan and Hongyu Wan handled the crowds at SIGGRAPH with aplomb, answering questions and demonstrating the applications. Hongyu was the primary author of the Unity-based game segment that was shown to engage visitors with the world of diatoms. Here is a video of that application!
+                    </p>
+
+                    <div class="video-container">
+                        <video controls width="100%">
+                            <source src="diatom-demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-metadata">
+                    <div class="category-tags">
+                        <a href="#" class="tag">AWS</a>
+                        <a href="#" class="tag">Cloud Computing</a>
+                        <a href="#" class="tag">University Research</a>
+                    </div>
+                </div>
+
+                <h1 class="post-title">
+                    Exploring AWS Innovation: A University's Journey into Cloud Computing Excellence
+                </h1>
+
+                <div class="post-info">
+                    <div class="authors">
+                        <span class="author-label">By</span>
+                        <span class="author-names">Reed Huang, Derek Jacoby, and Yvonne Coady</span>
+                    </div>
+                    <div class="publish-date">
+                        <time datetime="2025-08-12">August 12, 2025</time>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="lead-paragraph">
+                        Welcome to our AWS Explorations Blog, where we document our university's journey into the vast landscape of Amazon Web Services. This platform serves as a comprehensive resource for educators, researchers, and students who are navigating the complexities of cloud computing in academic environments.
+                    </p>
+
+                    <h2>Our Mission</h2>
+                    <p>
+                        As educators and researchers in the rapidly evolving field of technology, we recognize the transformative potential of cloud computing in academic settings. Amazon Web Services offers an unprecedented array of tools and services that can revolutionize how universities approach teaching, research, and innovation.
+                    </p>
+
+                    <p>
+                        Through this blog, we aim to share our hands-on experiences, practical insights, and lessons learned as we explore various AWS services and their applications in higher education. Our goal is to create a valuable resource that helps fellow educators harness the power of the cloud while navigating the unique challenges and opportunities present in academic environments.
+                    </p>
+
+                    <h2>What You'll Find Here</h2>
+                    <p>
+                        Our exploration will cover a wide range of AWS services and use cases relevant to university settings:
+                    </p>
+
+                    <ul>
+                        <li><strong>Educational Technology Solutions:</strong> How AWS services can enhance online learning platforms, student information systems, and collaborative research environments.</li>
+                        <li><strong>Research Computing:</strong> Leveraging AWS's computational power for data analysis, machine learning projects, and high-performance computing tasks.</li>
+                        <li><strong>Cost-Effective Infrastructure:</strong> Strategies for optimizing AWS usage to fit within university budgets while maximizing educational impact.</li>
+                        <li><strong>Security and Compliance:</strong> Ensuring data protection and meeting regulatory requirements in educational cloud deployments.</li>
+                        <li><strong>Innovation Sandboxes:</strong> Creating safe, controlled environments for students and faculty to experiment with cutting-edge technologies.</li>
+                    </ul>
+
+                    <h2>Join Our Journey</h2>
+                    <p>
+                        Whether you're a fellow educator looking to integrate cloud technologies into your curriculum, a researcher seeking scalable computing solutions, or an administrator exploring cost-effective IT infrastructure, we invite you to join us on this exploration.
+                    </p>
+
+                    <p>
+                        Each post will provide practical insights, real-world examples, and actionable guidance based on our direct experience with AWS services. We believe that by sharing our discoveries, challenges, and successes, we can collectively advance the use of cloud computing in higher education.
+                    </p>
+
+                    <p>
+                        Stay tuned for upcoming posts where we'll dive deep into specific AWS services, share implementation case studies, and provide step-by-step guides for common university use cases. Together, we'll explore how AWS can empower educational institutions to innovate, scale, and deliver exceptional learning experiences in the digital age.
+                    </p>
+                </div>
+
+                <div class="author-bios">
+                    <h3>About the Authors</h3>
+                    <div class="author-cards">
+                        <div class="author-card">
+                            <div class="author-photo-placeholder">
+                                <span>RH</span>
+                            </div>
+                            <div class="author-info">
+                                <h4>Reed Huang</h4>
+                                <p>Bio to be added</p>
+                            </div>
+                        </div>
+                        <div class="author-card">
+                            <div class="author-photo">
+                                <img src="derekja_hat_square.jpg" alt="Derek Jacoby" />
+                            </div>
+                            <div class="author-info">
+                                <h4>Derek Jacoby</h4>
+                                <p>Derek Jacoby is a PhD computer scientist who has spent the past 6 years running a team of 12 on a National Research Council contract in geospatial analytics. During this time education/outreach projects include engagements with the Nuu-Chah-Nulth nation on site selection for kelp farms, mentorship of students in the <a href="https://vernajkirkness.org/" target="_blank">Verna J Kirkness program</a> and the creation of VR tsunami simulations which have been displayed to middle schoolers across the province.</p>
+                                <p>Derek founded and runs the local <a href="https://makerspace.ca/" target="_blank">makerspace</a> and has secured over $750k in work-integrated-learning contracts over the past two years through his education non-profit, the <a href="https://coastalcomputing.ca/" target="_blank">Pacific Coastal Computing Association (PCCA)</a>. In prior decades, Derek ran the speech recognition team at Microsoft Research and filled various roles on the Windows team at Microsoft.</p>
+                                <p>Derek has been involved in synthetic biology since 2008 and has deep interests in genetics and medicine, he is currently on the teaching team for an MIT course called <a href="https://howtogrowalmostanything.notion.site/htgaa25" target="_blank">How To Grow Almost Anything</a>. Besides publishing <a href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/31261" target="_blank">highly cited remote sensing and AI research</a>, Derek is a passionate educator who is focused on equity and diversity in AI education. Derek is a sailor and has recently built an off-grid home near Shawnigan Lake on Vancouver Island.</p>
+                            </div>
+                        </div>
+                        <div class="author-card">
+                            <div class="author-photo">
+                                <img src="YvonneCoady.png" alt="Yvonne Coady" />
+                            </div>
+                            <div class="author-info">
+                                <h4>Yvonne Coady</h4>
+                                <p>Yvonne Coady is a computer science professor at the University of Victoria and serves as an adjunct professor at the Centre for Digital Media in Vancouver. She also has an appointment with NorthEastern University Vancouver. Coady works with Indigenous community members to develop software learning tools and platforms for improved access to remote education.</p>
+                                <p>Coady's research changes the way software developers and users utilize the collaborative medium that is the World Wide Web. She believes that the power to harness the power of cloud computing is on the horizon. Her ultimate goal is to take the enormous computing power that used to only be accessible to specialized researchers and share it with the community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
