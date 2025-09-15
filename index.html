@@ -19,6 +19,152 @@
                 <div class="post-metadata">
                     <div class="category-tags">
                         <a href="#" class="tag">AWS</a>
+                        <a href="#" class="tag">Innovation Sandbox</a>
+                        <a href="#" class="tag">Distributed Systems</a>
+                        <a href="#" class="tag">Cloud Education</a>
+                    </div>
+                </div>
+
+                <h1 class="post-title">
+                    How Innovation Sandbox Facilitates Cloud Environment Learning in Distributed Systems Education
+                </h1>
+
+                <div class="post-info">
+                    <div class="authors">
+                        <span class="author-label">By</span>
+                        <span class="author-names">Reed Huang, Derek Jacoby, and Yvonne Coady</span>
+                    </div>
+                    <div class="publish-date">
+                        <time datetime="2025-09-14">September 14, 2025</time>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="lead-paragraph">
+                        Teaching distributed systems in university courses requires robust cloud environments that can accommodate complex student projects while maintaining cost control and administrative efficiency. This post explores how AWS Innovation Sandbox offers advantages over traditional AWS Learner Lab environments for academic distributed systems coursework.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="sandbox-setup.png" alt="AWS Innovation Sandbox setup interface showing account management options" />
+                    </div>
+
+                    <h2>Context & Challenges with AWS Learner Lab</h2>
+                    <p>
+                        To learn fundamental knowledge of distributed systems, courses guide students to deploy, interact, and test their services in AWS environments. AWS Academy's Learner Lab platform simplifies the workflow by providing federated accounts with fixed budgets and custom duration, but comes with significant limitations:
+                    </p>
+
+                    <ul>
+                        <li><strong>Budget Cap Restrictions:</strong> The $50 budget limit often proves insufficient for comprehensive distributed systems projects</li>
+                        <li><strong>Limited Service Access:</strong> Restricted range of AWS services available, limiting the scope of learning materials</li>
+                        <li><strong>IAM Limitations:</strong> Strict prohibition of user and role creation through the existing "LabRole", preventing realistic cloud architecture learning</li>
+                        <li><strong>Account Termination:</strong> Accounts are directly terminated when credits expire, forcing students to rebuild services</li>
+                        <li><strong>Limited Visibility:</strong> Restricted access to billing and cost pages makes it difficult for students to track usage</li>
+                    </ul>
+
+                    <p>
+                        The restricted IAM access becomes problematic when incorporating advanced projects that require services beyond the approved list. In a recent distributed systems course with 30 students, more than a third required new account requests during the semester, creating significant administrative burden for both instructors and students.
+                    </p>
+
+                    <h2>AWS Innovation Sandbox: A Comprehensive Solution</h2>
+                    <p>
+                        AWS Innovation Sandbox, designed specifically for use cases like higher education training labs, addresses many of these limitations by providing a more flexible and comprehensive educational environment.
+                    </p>
+
+                    <h3>Enhanced Account Management</h3>
+                    <p>
+                        Innovation Sandbox offers sophisticated account lifecycle management through AWS Organizations, reducing administrative overhead. Accounts can be configured with both time-limited (in hours) and cost-limited (in integer dollars) constraints, with global values set via AppConfig or local values through lease templates in the web UI.
+                    </p>
+
+                    <h3>Broader Service Access and Permissions</h3>
+                    <p>
+                        Unlike Learner Lab's restrictive service list, Innovation Sandbox provides access to a comprehensive range of AWS services. Students can work with advanced networking, container orchestration (ECS/ECR), and serverless computing services essential for modern distributed systems education.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="sandbox-permissions.png" alt="Innovation Sandbox permissions configuration showing ECS/ECR access options" />
+                    </div>
+
+                    <p>
+                        However, the default user permissions may require adjustment for certain services. For advanced projects requiring ECS/ECR deployment, Service Control Policies (SCPs) in AWS Organizations may need modification to grant appropriate access.
+                    </p>
+
+                    <h3>Improved Cost Monitoring and Budgeting</h3>
+                    <p>
+                        The platform provides enhanced visibility into account usage through integrated budget tracking and cost monitoring tools. While the system includes an alert system for notifications, budget UI updates and Cost Explorer data may have some refresh delays.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="sandbox-budget-ui.png" alt="Innovation Sandbox budget monitoring interface" />
+                    </div>
+
+                    <div class="image-container">
+                        <img src="sandbox-cost-explorer.png" alt="AWS Cost Explorer showing monthly usage tracking in Innovation Sandbox" />
+                    </div>
+
+                    <h3>Administrative Control and Flexibility</h3>
+                    <p>
+                        The admin account provides comprehensive control over account lifecycle management, including moving accounts between states (entry to cleanup, active to frozen), lease template management, and user access control through Identity Center integration. The platform supports three user levels: admin, manager, and user, each with appropriate permissions for their role.
+                    </p>
+
+                    <h2>Educational Impact and Use Cases</h2>
+                    <p>
+                        The enhanced capabilities of Innovation Sandbox enable more sophisticated distributed systems projects, including:
+                    </p>
+
+                    <ul>
+                        <li>Multi-region deployments for studying latency and consistency</li>
+                        <li>Auto-scaling scenarios for load testing and performance analysis</li>
+                        <li>Complex microservices architectures with proper security boundaries</li>
+                        <li>Container orchestration and observability systems</li>
+                        <li>Hybrid cloud and edge computing scenarios</li>
+                    </ul>
+
+                    <p>
+                        Projects like observability systems in distributed environments become feasible with the expanded service access and flexible permission model that Innovation Sandbox provides.
+                    </p>
+
+                    <h2>Implementation Considerations</h2>
+                    <p>
+                        While Innovation Sandbox offers significant advantages, educators should consider several factors:
+                    </p>
+
+                    <ul>
+                        <li><strong>Setup Complexity:</strong> Initial configuration requires more planning than Learner Lab, with manual SAML 2.0 application creation steps that don't support automation</li>
+                        <li><strong>Permission Configuration:</strong> Default user permissions may require customization for specific course requirements</li>
+                        <li><strong>Monitoring Requirements:</strong> Enhanced capabilities require more sophisticated usage monitoring and cost management</li>
+                        <li><strong>Student Onboarding:</strong> Students may need additional training on the expanded service portfolio</li>
+                    </ul>
+
+                    <h2>Technical Setup Process</h2>
+                    <p>
+                        The deployment follows a structured four-step process outlined in the official AWS documentation:
+                    </p>
+                    <ol>
+                        <li>Deploy the AccountPool stack for account orchestration</li>
+                        <li>Deploy the IDC (Identity Center) stack for authentication management</li>
+                        <li>Deploy the Data stack for configuration and monitoring</li>
+                        <li>Deploy the Compute stack for the web interface and processing</li>
+                    </ol>
+
+                    <p>
+                        Note that production-level access for SES (Simple Email Service) can take up to 2 days if experimenting with new domains for notification systems.
+                    </p>
+
+                    <h2>Looking Forward</h2>
+                    <p>
+                        As distributed systems education evolves to meet industry demands, platforms like AWS Innovation Sandbox provide the flexibility and comprehensive service access needed to prepare students for real-world challenges. The ability to work with production-grade tools and realistic constraints better prepares graduates for careers in cloud-native distributed systems development.
+                    </p>
+
+                    <p>
+                        For educators currently using AWS Learner Lab, Innovation Sandbox presents a compelling upgrade path that addresses many common limitations while providing the administrative control necessary for effective course management. The enhanced capabilities and reduced long-term administrative overhead make it an attractive solution for advanced distributed systems education.
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-metadata">
+                    <div class="category-tags">
+                        <a href="#" class="tag">AWS</a>
                         <a href="#" class="tag">Development Teams</a>
                         <a href="#" class="tag">Claude Code</a>
                         <a href="#" class="tag">Infrastructure as Code</a>
